@@ -1,0 +1,21 @@
+{
+  "name": "project-kickoff",
+  "displayName": "Project Kickoff",
+  "version": "1.0.0",
+  "description": "프로젝트 기본 문서 세트를 스택에 맞게 생성하고 커밋 대상과 이그노어 대상을 나눠 배치한다",
+  "author": {
+    "name": "Leeseoleem",
+    "url": "https://github.com/Leeseoleem"
+  },
+  "license": "MIT",
+  "keywords": [
+    "kickoff",
+    "claude-md",
+    "convention",
+    "code-review",
+    "retrospective",
+    "korean"
+  ],
+  "repository": "https://github.com/Leeseoleem/claude-project-kickoff",
+  "homepage": "https://github.com/Leeseoleem/claude-project-kickoff#readme"
+}
