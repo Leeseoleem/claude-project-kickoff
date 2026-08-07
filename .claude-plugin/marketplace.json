@@ -1,0 +1,23 @@
+{
+  "name": "leeseoleem-plugins",
+  "owner": {
+    "name": "Leeseoleem",
+    "url": "https://github.com/Leeseoleem"
+  },
+  "description": "개인용 Claude Code 플러그인 모음",
+  "plugins": [
+    {
+      "name": "project-kickoff",
+      "source": "./plugins/project-kickoff",
+      "description": "프로젝트 기본 문서 세트(CLAUDE.md, 커밋 컨벤션, 코드 리뷰 가이드, PR 템플릿, 사이클 회고)를 스택에 맞게 생성하고 .gitignore까지 설정한다",
+      "category": "workflow",
+      "keywords": [
+        "kickoff",
+        "claude-md",
+        "convention",
+        "code-review",
+        "korean"
+      ]
+    }
+  ]
+}
