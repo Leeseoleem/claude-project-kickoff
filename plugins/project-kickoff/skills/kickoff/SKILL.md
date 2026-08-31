@@ -10,6 +10,9 @@ description: 프로젝트에 기본 문서 세트(CLAUDE.md, 커밋 컨벤션, �
 **템플릿 경로: `${CLAUDE_PLUGIN_ROOT}/skills/kickoff/templates/`**
 플러그인은 설치 시 캐시로 복사되므로 상대 경로가 아니라 이 환경변수 경로로 읽는다.
 
+> **플러그인으로 설치하지 않고 이 레포를 직접 클론해 쓰는 경우**, `${CLAUDE_PLUGIN_ROOT}`를
+> 클론한 레포의 `plugins/project-kickoff/` 로 읽는다. 그 변수는 플러그인 설치 시에만 값이 생긴다.
+
 **절대 규칙 두 개**
 
 1. `{{PLACEHOLDER}}`가 한 개라도 파일에 남으면 실패다. 전부 실제 값으로 치환하거나 규칙대로 삭제한다.
