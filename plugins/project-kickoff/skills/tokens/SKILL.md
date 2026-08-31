@@ -13,6 +13,9 @@ description: 디자인 토큰을 원시(primitive)와 기능(semantic) 2층으�
 **보조 스크립트: `${CLAUDE_PLUGIN_ROOT}/skills/tokens/scripts/tokens.py`**
 표준 라이브러리만 쓴다. `python3 tokens.py` 로 사용법이 나온다.
 
+> **플러그인으로 설치하지 않고 이 레포를 직접 클론해 쓰는 경우**, `${CLAUDE_PLUGIN_ROOT}`를
+> 클론한 레포의 `plugins/project-kickoff/` 로 읽는다. 그 변수는 플러그인 설치 시에만 값이 생긴다.
+
 ```
 scan <경로...>              하드코딩된 색·radius·spacing 수집. 문서(.md)는 따로 모은다
 contrast <fg> <bg> [기준]   대비비 하나. 기준은 text(4.5) | ui(3.0) | large(3.0)
