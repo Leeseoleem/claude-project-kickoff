@@ -62,6 +62,7 @@
 
 ### 코드 리뷰
 - {{REVIEW_TARGET_PRS}} PR은 머지 전 리뷰 (5줄 이내·문서만 변경 등은 스킵 가능)
+- 단 CI·권한·시크릿·의존성 추가 변경은 줄 수와 무관하게 반드시 리뷰. 위험은 diff 크기와 무관하다
 - 검증 명령: {{VERIFY_COMMANDS_INLINE}}
 - 리포트: PR 코멘트에 남기고, 파일 사본은 `.claude/local/reviews/{브랜치명}.md` (이그노어)
 - 상세: `docs/code-review.md`
