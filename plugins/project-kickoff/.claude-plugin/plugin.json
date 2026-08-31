@@ -1,8 +1,8 @@
 {
   "name": "project-kickoff",
   "displayName": "Project Kickoff",
-  "version": "1.0.0",
-  "description": "프로젝트 기본 문서 세트를 스택에 맞게 생성하고 커밋 대상과 이그노어 대상을 나눠 배치한다",
+  "version": "1.2.1",
+  "description": "프로젝트 기본 문서 세트를 스택에 맞게 생성하고, 디자인 토큰을 원시·기능 2층으로 정리한다",
   "author": {
     "name": "Leeseoleem",
     "url": "https://github.com/Leeseoleem"
@@ -13,7 +13,9 @@
     "claude-md",
     "convention",
     "code-review",
-    "retrospective",
+    "design-tokens",
+    "dark-mode",
+    "a11y",
     "korean"
   ],
   "repository": "https://github.com/Leeseoleem/claude-project-kickoff",
