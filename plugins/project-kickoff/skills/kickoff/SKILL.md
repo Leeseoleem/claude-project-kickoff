@@ -13,6 +13,7 @@ description: 프로젝트에 기본 문서 세트(CLAUDE.md, 커밋 컨벤션, �
 **절대 규칙 두 개**
 
 1. `{{PLACEHOLDER}}`가 한 개라도 파일에 남으면 실패다. 전부 실제 값으로 치환하거나 규칙대로 삭제한다.
+   예외: `code-review.md` 안의 `${{ github.event.* }}`는 GitHub Actions 문법 그대로다. 치환 대상이 아니다.
 2. 감지하지 못한 값을 추측으로 채우지 않는다. 모르면 STEP 2에서 묻거나 "미정"으로 명시한다.
 
 ---
@@ -170,6 +171,8 @@ STEP 2에서 "병합"을 택한 경우에만 적용한다.
 | `{{DESIGN_TOKEN_CHECKBOX_OR_OMIT}}` | 토큰이 정의돼 있을 때만 `- [ ] 디자인 토큰 사용 (하드코딩 색상 없음)`. 미정이면 줄 삭제 |
 | `{{PR_VISUAL_SECTION_OR_OMIT}}` | UI가 있는 프로젝트면 `## 화면` 섹션. 모바일이면 iOS·Android 캡처 자리, 웹이면 before/after 캡처 자리. CLI·라이브러리처럼 화면이 없으면 섹션 삭제 |
 | `{{EXTRA_CONVENTIONS_OR_OMIT}}` | 스택 특수 규칙. 예: Next.js면 Server/Client Component 경계와 `NEXT_PUBLIC_` 노출 금지, Expo면 Expo Router 파일 기반 라우팅 주의점 |
+| `{{AUTOGEN_FILES_INLINE}}` | 그 스택에서 사람이 손대지 않는 자동 생성 파일. 예: `lockfile, expo-router 자동 라우트` / `lockfile, next-env.d.ts, 생성 타입` |
+| `{{CONFIG_FILES_INLINE}}` | 실행 환경·신뢰 경계를 정의하는 설정 파일 경로를 백틱 목록으로. `.github/workflows/*.yml`은 항상 포함. 스택별로 `eas.json`, `app.config.*`, `next.config.*`, `vercel.json`, `Dockerfile`, `package.json` 중 실제로 있는 것 |
 | `{{EXTRA_REVIEW_AREAS_OR_OMIT}}` | 플랫폼 특수 점검 영역을 불릿으로. **모바일이면 반드시 포함**: 네이티브 권한 처리, 플랫폼 분기(iOS/Android), safe area·키보드 회피, 리스트 렌더 성능. 웹이면 접근성(시맨틱 태그·키보드 포커스·색 대비), SSR/CSR 경계 |
 | `{{EXTRA_REVIEW_AREAS_INLINE_OR_NONE}}` | 위 항목을 쉼표로 이은 한 줄 요약 |
 | `{{INSTALL_AND_RUN_BLOCK}}` | 감지한 패키지 매니저로 설치 + 실행 명령 |
@@ -192,6 +195,7 @@ STEP 2에서 "병합"을 택한 경우에만 적용한다.
 - 만든 파일을 커밋 대상 / 이그노어 대상으로 나눠 목록으로
 - 기존 파일에서 흡수·이동한 내용
 - "미정"으로 남긴 항목과, `_OR_OMIT`으로 삭제한 항목
+- 디자인 토큰을 "미정"으로 남겼으면, 같은 플러그인의 `tokens` 스킬로 이어서 정리할 수 있다고 한 줄 알린다 (`/project-kickoff:tokens`). 이 스킬에서 토큰 작업을 직접 하지 않는다
 - `.gitignore` 보완 제안 중 사용자가 아직 결정 안 한 것
 - 커밋 제안. **두 커밋으로 나눈다.** 방금 만든 커밋 컨벤션이 "여러 변경 섞기 금지"라 한 커밋으로 묶으면 첫 커밋부터 자기 규칙을 어긴다
 
